@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FitFull</string>
+    <string name="tab_text_1">Fridge</string>
+    <string name="tab_text_2">Pantry</string>
+    <string name="tab_text_3">Recipes</string>
+    <string name="tab_text_4">Fitness</string>
+</resources>
