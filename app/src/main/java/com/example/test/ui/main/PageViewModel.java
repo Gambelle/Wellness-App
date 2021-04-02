@@ -1,4 +1,6 @@
-package com.example.fillfull.ui.main;
+package com.example.test.ui.main;
+
+import android.util.Log;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">FitFull</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Profile</string>
+    <string name="nav_header_subtitle">Username</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Goals</string>
+    <string name="menu_slideshow">Records</string>
+    <string name="title_activity_tab">TabActivity</string>
     <string name="tab_text_1">Fridge</string>
     <string name="tab_text_2">Pantry</string>
-    <string name="tab_text_3">Recipes</string>
-    <string name="tab_text_4">Fitness</string>
 </resources>
