@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
     <TextView
         android:id="@+id/text_gallery"
         android:layout_width="match_parent"
@@ -13,10 +24,73 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="75dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/nutrients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Food"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <Button
+        android:id="@+id/nutrients"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="58dp"
+        android:text="Macronutrients"
+        app:layout_constraintBottom_toTopOf="@+id/mealTracker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_gallery"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mealTracker"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="40dp"
+        android:text="Meal Tracker"
+        app:layout_constraintBottom_toTopOf="@+id/water"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nutrients"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/water"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="44dp"
+        android:text="Water"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/mealTracker"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="4dp"
+        android:text="Food"
+        android:textAllCaps="false"
+        android:textColor="#8BC34A"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

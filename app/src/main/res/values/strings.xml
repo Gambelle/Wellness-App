@@ -9,8 +9,10 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Goals</string>
-    <string name="menu_slideshow">Records</string>
+    <string name="menu_slideshow">Achievements</string>
     <string name="title_activity_tab">TabActivity</string>
     <string name="tab_text_1">Fridge</string>
     <string name="tab_text_2">Pantry</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
