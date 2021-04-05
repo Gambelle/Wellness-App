@@ -17,3 +17,8 @@ Set specific goals for your diet
 
 ### Achievement 
 Motivates you to keep eating healthy and Maintain diets
+
+
+### Platform/Language 
+Android Studio
+Java
