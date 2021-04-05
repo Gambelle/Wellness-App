@@ -1,0 +1,27 @@
+Estimated programming hours
+
+Meetings
+30 min. Meetings 3 times per week
+6 meetings total
+3hrs total
+
+Formatting Fragments: 2hrs
+	LOC: 50
+	Work with xmls and layouts to formate app
+
+Functionality
+Fragment Activity: 4hrs
+	LOC:100+
+	Add activities that allow for tabs and navigation menu
+What’s in my Fridge: 6hrs
+LOC: 200+
+	Need to create a browser where they can search grocery items and put them 
+	in their “Fridge”
+	Add/remove an item feature- Just the basic buttons for the prototype
+Goal Progress: 6hrs
+LOC: 200+
+	 Track-specific progress in healthy diet habits
+		Add buttons and fragments- Just the basic buttons for the prototype
+
+
+Total Estimated Time: 18hrs
