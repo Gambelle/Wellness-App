@@ -13,6 +13,30 @@
     <string name="title_activity_tab">TabActivity</string>
     <string name="tab_text_1">Fridge</string>
     <string name="tab_text_2">Pantry</string>
+    <string-array name="fridgeItems">
+        <item>Milk</item>
+        <item>Eggs</item>
+        <item>Ham</item>
+        <item>Cheese</item>
+    </string-array>
+    <string-array name="fridgeQuantity">
+        <item>1 gallon</item>
+        <item>12</item>
+        <item>1 pound</item>
+        <item>4 slices</item>
+    </string-array>
+    <string-array name="pantryItems">
+        <item>Pasta</item>
+        <item>Cereal</item>
+        <item>Potato</item>
+        <item>Peanut Butter</item>
+    </string-array>
+    <string-array name="pantryQuantity">
+        <item>1 pound</item>
+        <item>1 Box</item>
+        <item>2 pounds</item>
+        <item>6 cups</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
