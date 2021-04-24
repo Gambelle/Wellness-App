@@ -15,34 +15,41 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test.R;
+import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class PantryFragment extends Fragment {
-    String s1[], s2[];
+    ArrayList<String> ps1;
     RecyclerView recyclerView;
-    Set<String> defaultString;
+    Set<String> defaultString = new HashSet<String>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_fridge, container, false);
 
-        ConstraintLayout overlayItem = (ConstraintLayout) root.findViewById(R.id.additemoverlay);
-        overlayItem.setVisibility(View.INVISIBLE);
+        ConstraintLayout overlayAdd = (ConstraintLayout) root.findViewById(R.id.additemoverlay);
+        ConstraintLayout overlayEdit = (ConstraintLayout) root.findViewById(R.id.edititemoverlay);
+        overlayAdd.setVisibility(View.INVISIBLE);
+        overlayEdit.setVisibility(View.INVISIBLE);
+        TextInputEditText addText1 = root.findViewById(R.id.addItemText1);
+        TextInputEditText addText2 = root.findViewById(R.id.addItemText2);
+        TextInputEditText editText1 = root.findViewById(R.id.editText1);
+        TextInputEditText editText2 = root.findViewById(R.id.editText2);
 
         Context context = getActivity();
         SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        s1 = sharedPref.getStringSet(getString(R.string.pantryItems), defaultString).toArray(new String[0]);
-        s2 = sharedPref.getStringSet(getString(R.string.pantryQuantities), defaultString).toArray(new String[0]);
+        //s1 = new String[] {"Potatoes@3 pounds","Cereal@1 box","Pasta@1 pound"};
+        ps1 = new ArrayList<String>(sharedPref.getStringSet(getString(R.string.pantryItems), defaultString));
+        //s2 = sharedPref.getStringSet(getString(R.string.pantryQuantities), defaultString).toArray(new String[0]);
 
         recyclerView = root.findViewById(R.id.recyclerView);
 
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getActivity(), s1,s2);
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getActivity(), ps1);
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -50,7 +57,7 @@ public class PantryFragment extends Fragment {
         addItem.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                overlayItem.setVisibility(View.VISIBLE);
+                overlayAdd.setVisibility(View.VISIBLE);
 
             }
         });
@@ -59,18 +66,73 @@ public class PantryFragment extends Fragment {
         addItem2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                overlayItem.setVisibility(View.INVISIBLE);
+                overlayAdd.setVisibility(View.INVISIBLE);
 
                 // Do something in response to button click
-                //Context context = getActivity();
-                //SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                if(String.valueOf(addText1.getText()) != "" && String.valueOf(addText2.getText()) != "") {
+                    Context context = getActivity();
+                    SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+                    ps1.add(String.valueOf(addText1.getText()) + "@" + String.valueOf(addText2.getText()));
+                    Set<String> ps1Set = new HashSet<String>(ps1);
 
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putStringSet(getString(R.string.pantryItems), ps1Set);
+                    editor.apply();
+                    recyclerAdapter.notifyDataSetChanged();
+                }
+                overlayAdd.setVisibility(View.INVISIBLE);
+                addText1.setText("");
+                addText2.setText("");
+            }
+        });
 
-                //SharedPreferences.Editor editor = sharedPref.edit();
-                //editor.putStringSet(getString(R.string.saved_high_score_key), newHighScore);
-                //editor.apply();
+        ImageButton cancelBtn = (ImageButton) root.findViewById(R.id.cancelBtn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                overlayAdd.setVisibility(View.INVISIBLE);
+                addText1.setText("");
+                addText2.setText("");
+            }
+        });
 
+        recyclerAdapter.setWhenClickListener(new RecyclerAdapter.OnItemsClickListener() {
+            @Override
+            public void onDeleteClick(int place) {
+
+                ps1.remove(place);
+                Context context = getActivity();
+                SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                Set<String> ps1Set = new HashSet<String>(ps1);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putStringSet(getString(R.string.pantryItems), ps1Set);
+                editor.apply();
+                recyclerAdapter.notifyItemRemoved(place);
+                //recyclerAdapter.notifyItemRangeChanged(index,s1.size()-index);
+            }
+            @Override
+            public void onEditClick(int place, String ItemName, String ItemQuantity){
+                overlayEdit.setVisibility(View.VISIBLE);
+                editText1.setText(ItemName);
+                editText2.setText(ItemQuantity);
+                ImageButton editBtn2 = (ImageButton) root.findViewById(R.id.editButton2);
+                editBtn2.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        // Do something in response to button click
+                        ps1.set(place,editText1.getText()+"@"+editText2.getText());
+                        Context context = getActivity();
+                        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                        Set<String> ps1Set = new HashSet<String>(ps1);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putStringSet(getString(R.string.pantryItems), ps1Set);
+                        editor.apply();
+                        overlayEdit.setVisibility(View.INVISIBLE);
+                        addText1.setText("");
+                        addText2.setText("");
+                        recyclerAdapter.notifyItemChanged(place);
+                    }
+                });
             }
         });
 
