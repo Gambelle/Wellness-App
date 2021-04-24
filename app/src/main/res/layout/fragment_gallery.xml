@@ -7,9 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
     <FrameLayout
+
+        android:id="@+id/goals"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         tools:ignore="MissingConstraints">
+    <EditText
+        android:id="@+id/calories"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:textSize="30sp"
+        android:inputType="number" />
+
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="75dp"
+        android:text="Set"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calories" />
+
+
+        <TextView
+            android:id="@+id/calfood"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="0/1000"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
         <Button
             android:id="@+id/nutrients"
@@ -39,6 +78,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nutrients"
             tools:ignore="MissingConstraints" />
 
+
         <TextView
             android:id="@+id/Food"
             android:layout_width="wrap_content"
@@ -54,7 +94,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
-
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton1"
@@ -96,6 +135,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
+
         <TextView
             android:id="@+id/numWater"
             android:layout_width="wrap_content"
@@ -109,23 +149,12 @@
             tools:ignore="InvalidId,MissingConstraints"
             tools:layout_editor_absoluteY="628dp" />
 
-        <EditText
-            android:id="@+id/clories"
-            android:layout_width="147dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="60dp"
-            android:ems="10"
-            android:textSize="30sp"
-            android:inputType="number" />
-
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/cal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="190dp"
-            android:layout_marginTop="75dp"
-
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="150dp"
             android:textSize="30sp"
             android:text="cal" />
 
