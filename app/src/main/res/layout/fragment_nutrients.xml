@@ -5,52 +5,186 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
+    <FrameLayout
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="48dp"
-        android:text="Carbs\n0/30 g"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:id="@+id/nutrientsFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="39dp"
-        android:text="Protien\n0/88 g"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/carbs"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="30sp"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/save1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:text="Save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calories" />
+        <TextView
+            android:id="@+id/carbsText"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="48dp"
+            android:text="0 g"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="212dp"
-        android:text="Fats\n0/142 g"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/protiens"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="30sp"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/save2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:text="Save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calories" />
+        <TextView
+            android:id="@+id/protienText"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="470dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="48dp"
+            android:text="0 g"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <EditText
+            android:id="@+id/fats"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="570dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="30sp"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/save3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="570dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="48dp"
+            android:text="Save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calories" />
+        <TextView
+            android:id="@+id/fatsText"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="670dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="48dp"
+            android:text="0 g"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+
+            android:layout_marginTop="35dp"
+            android:src="@drawable/abc_vector_test"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="17dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/CarbsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginBottom="4dp"
+            android:text="Carbs"
+            android:textAllCaps="false"
+            android:textColor="#8BC34A"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/ProtienTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="325dp"
+            android:layout_marginBottom="4dp"
+            android:text="Protien"
+            android:textAllCaps="false"
+            android:textColor="#8BC34A"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/FatsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="525dp"
+            android:layout_marginBottom="4dp"
+            android:text="Fats"
+            android:textAllCaps="false"
+            android:textColor="#8BC34A"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

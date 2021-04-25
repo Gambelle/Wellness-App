@@ -2,96 +2,163 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/placeholder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
-
     <FrameLayout
-        android:id="@+id/fragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
+        android:id="@+id/goals"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+    <EditText
+        android:id="@+id/calories"
+        android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="75dp"
-        android:textAlignment="center"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/nutrients"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Food"
-        app:layout_constraintVertical_bias="0.065" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:textSize="30sp"
+        android:inputType="number" />
+
 
     <Button
-        android:id="@+id/nutrients"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="58dp"
-        android:text="Macronutrients"
-        app:layout_constraintBottom_toTopOf="@+id/mealTracker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_gallery"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/mealTracker"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="40dp"
-        android:text="Meal Tracker"
-        app:layout_constraintBottom_toTopOf="@+id/water"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nutrients"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/water"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="44dp"
-        android:text="Water"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mealTracker"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/Food"
+        android:id="@+id/set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="4dp"
-        android:text="Food"
-        android:textAllCaps="false"
-        android:textColor="#8BC34A"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="75dp"
+        android:text="Set"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/calories" />
 
 
+        <TextView
+            android:id="@+id/calfood"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="0/1000"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/nutrients"
+            android:layout_width="371dp"
+            android:layout_height="121dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="227dp"
+            android:layout_marginEnd="16dp"
+            android:text="Macronutrients"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/mealTracker"
+            android:layout_width="367dp"
+            android:layout_height="129dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="12dp"
+            android:text="Meal Tracker"
+            app:layout_constraintBottom_toTopOf="@+id/Water"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nutrients"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/Food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="4dp"
+            android:text="Food"
+            android:textAllCaps="false"
+            android:textColor="#8BC34A"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="615dp"
+            android:layout_marginBottom="44dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_input_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="615dp"
+            android:layout_marginBottom="44dp"
+            android:clickable="true"
+            android:src="@android:drawable/button_onoff_indicator_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/Water"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginBottom="159dp"
+            android:text="Water Intake"
+            android:textColor="#8BC34A"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/numWater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="615dp"
+            android:text="0 glasses"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="InvalidId,MissingConstraints"
+            tools:layout_editor_absoluteY="628dp" />
+
+        <TextView
+            android:id="@+id/cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="150dp"
+            android:textSize="30sp"
+            android:text="cal" />
+
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
