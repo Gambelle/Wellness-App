@@ -1,5 +1,7 @@
 package com.example.test.ui.gallery;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -50,8 +52,9 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-
         Context context = getActivity();
+
+
         SharedPreferences sharedPref = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         num=sharedPref.getInt("water_pref", 0);
         value=sharedPref.getInt("calorie_pref", 0);
