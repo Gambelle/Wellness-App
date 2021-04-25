@@ -3,6 +3,7 @@ package com.example.test.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FridgeFragment extends Fragment {
-    //private static final String TAG = "FridgeFrag";
+    private static final String TAG = "FridgeFragment";
     ArrayList<String> s1;
     RecyclerView recyclerView;
     Set<String> defaultString = new HashSet<String>();
@@ -46,6 +47,7 @@ public class FridgeFragment extends Fragment {
 
         //s1 = new ArrayList<String> ("Milk@1 gallon", "Eggs@1 dozen", "Smoked Ham@1 pound");
         s1 = new ArrayList<String>(sharedPref.getStringSet(getString(R.string.fridgeItems), defaultString));
+        Log.d(TAG,"Imported Fridge List from Shared Preferences: "+s1.toString());
         //s2 = sharedPref.getStringSet(getString(R.string.fridgeQuantities), defaultString).toArray(new String[0]);
         recyclerView = root.findViewById(R.id.recyclerView);
 
@@ -77,6 +79,7 @@ public class FridgeFragment extends Fragment {
                     editor.apply();
                     recyclerAdapter.notifyDataSetChanged();
                 }
+                Log.d(TAG,"Added: "+String.valueOf(addText1.getText()) + "@" + String.valueOf(addText2.getText())+" Fridge list after Add: "+s1.toString());
                 overlayAdd.setVisibility(View.INVISIBLE);
                 addText1.setText("");
                 addText2.setText("");
@@ -98,7 +101,7 @@ public class FridgeFragment extends Fragment {
             public void onDeleteClick(int place) {
 
                 s1.remove(place);
-                //Log.v(TAG,"index on click: "+place+" s1: "+s1.toString());
+                Log.d(TAG,"Removal index: "+place+" Fridge list after Removal: "+s1.toString());
                 Context context = getActivity();
                 SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                 Set<String> s1Set = new HashSet<String>(s1);
@@ -123,6 +126,7 @@ public class FridgeFragment extends Fragment {
                         SharedPreferences.Editor editor = sharedPref.edit();
                         editor.putStringSet(getString(R.string.fridgeItems), s1Set);
                         editor.apply();
+                        Log.d(TAG,"Edit index: "+place+" Fridge list after Edit: "+s1.toString());
                         overlayEdit.setVisibility(View.INVISIBLE);
                         addText1.setText("");
                         addText2.setText("");
