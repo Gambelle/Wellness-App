@@ -3,6 +3,7 @@ package com.example.test.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PantryFragment extends Fragment {
+    private static final String TAG = "PantryFragment";
     ArrayList<String> ps1;
     RecyclerView recyclerView;
     Set<String> defaultString = new HashSet<String>();
@@ -45,6 +47,7 @@ public class PantryFragment extends Fragment {
 
         //s1 = new String[] {"Potatoes@3 pounds","Cereal@1 box","Pasta@1 pound"};
         ps1 = new ArrayList<String>(sharedPref.getStringSet(getString(R.string.pantryItems), defaultString));
+        Log.d(TAG,"Imported Pantry List from Shared Preferences: "+ps1.toString());
         //s2 = sharedPref.getStringSet(getString(R.string.pantryQuantities), defaultString).toArray(new String[0]);
 
         recyclerView = root.findViewById(R.id.recyclerView);
@@ -81,6 +84,7 @@ public class PantryFragment extends Fragment {
                     editor.apply();
                     recyclerAdapter.notifyDataSetChanged();
                 }
+                Log.d(TAG,"Added: "+String.valueOf(addText1.getText()) + "@" + String.valueOf(addText2.getText())+" Pantry list after Add: "+ps1.toString());
                 overlayAdd.setVisibility(View.INVISIBLE);
                 addText1.setText("");
                 addText2.setText("");
@@ -102,6 +106,7 @@ public class PantryFragment extends Fragment {
             public void onDeleteClick(int place) {
 
                 ps1.remove(place);
+                Log.d(TAG,"Removal index: "+place+" Pantry list after Removal: "+ps1.toString());
                 Context context = getActivity();
                 SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                 Set<String> ps1Set = new HashSet<String>(ps1);
@@ -127,6 +132,7 @@ public class PantryFragment extends Fragment {
                         SharedPreferences.Editor editor = sharedPref.edit();
                         editor.putStringSet(getString(R.string.pantryItems), ps1Set);
                         editor.apply();
+                        Log.d(TAG,"Edit index: "+place+" Pantry list after Edit: "+ps1.toString());
                         overlayEdit.setVisibility(View.INVISIBLE);
                         addText1.setText("");
                         addText2.setText("");
