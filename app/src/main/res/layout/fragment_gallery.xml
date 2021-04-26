@@ -158,6 +158,14 @@
             android:textSize="30sp"
             android:text="cal" />
 
+        <ImageButton
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="150dp"
+            android:id="@+id/editsettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_edit" />
+
 
     </FrameLayout>
 

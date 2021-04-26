@@ -26,5 +26,7 @@ public class TabActivity extends MainActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+
     }
 }
