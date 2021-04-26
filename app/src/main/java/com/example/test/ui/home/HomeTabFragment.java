@@ -3,6 +3,7 @@ package com.example.test.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class HomeTabFragment extends Fragment {
     RecyclerView items;
     ArrayList<String> allItems;
     Set<String> defaultString = new HashSet<String>();
+    ArrayList<String> itemsChecked;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class HomeTabFragment extends Fragment {
         items.setAdapter(recyclerA);
         items.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        itemsChecked = new ArrayList<String>();
 
 
         Button searchButton = (Button) root.findViewById(R.id.get_recipe_bttn);
@@ -72,6 +74,23 @@ public class HomeTabFragment extends Fragment {
             }
         });
 
+        recyclerA.setWhenClickListener(new RecyclerAdapter2.OnItemsClickListener() {
+            @Override
+            public void onCheck(String itemName, boolean isCheck) {
+                if (isCheck) {
+                    itemsChecked.add(itemName);
+                    Log.d("Home Tab Fragment","Array after Add: "+itemsChecked.toString());
+                }
+                else if(!isCheck) {
+                    itemsChecked.remove(itemName);
+                    Log.d("Home Tab Fragment","Array after Removal: "+itemsChecked.toString());
+                }
+                else{
+                    Log.d("Home Tab Fragment", "error in isCheck");
+                }
+
+            }
+        });
         return root;
     }
 }
