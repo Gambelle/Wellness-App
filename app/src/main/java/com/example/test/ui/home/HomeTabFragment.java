@@ -23,6 +23,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.test.R;
 import com.example.test.ui.slideshow.SlideshowViewModel;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +40,10 @@ public class HomeTabFragment extends Fragment {
     ArrayList<String> allItems;
     Set<String> defaultString = new HashSet<String>();
     ArrayList<String> itemsChecked;
+    URL url;
+    String rawData;
+    HttpURLConnection urlConnection;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -93,4 +103,55 @@ public class HomeTabFragment extends Fragment {
         });
         return root;
     }
+
+    private void createQuery(){
+        String url = "";
+        String website = "http://api.edamam.com/search?";
+        String appKey = "&app_key=143092dfd2c7edb60d17f6ba0d27251b";
+        String appId = "&app_id=56ecd714";
+        String query = "q=chicken";
+        url = website + query + appId + appKey;
+        String raw = sendRequest(url);
+    }
+
+    private String sendRequest(String r){
+        try{
+            url = new URL(r);
+        }
+        catch (java.net.MalformedURLException e){
+            return("Empty");
+        }
+        finally {
+            try {
+                urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                rawData = readStream(in);
+            }
+            catch (IOException e){
+                return("Error");
+            }
+            finally {
+                urlConnection.disconnect();
+                return(rawData);
+            }
+        }
+
+    }
+
+    private String readStream(InputStream is) {
+        try {
+            ByteArrayOutputStream bo = new ByteArrayOutputStream();
+            int i = is.read();
+            while(i != -1) {
+                bo.write(i);
+                i = is.read();
+            }
+            return bo.toString();
+        } catch (IOException e) {
+            return "";
+        }
+    }
+
+
+
 }
