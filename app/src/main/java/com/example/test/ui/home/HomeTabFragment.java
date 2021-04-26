@@ -53,13 +53,6 @@ public class HomeTabFragment extends Fragment {
         slideshowViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
 
         ConstraintLayout overLaySelectItems = (ConstraintLayout) root.findViewById(R.id.search_overlay);
         overLaySelectItems.setVisibility(View.INVISIBLE);
@@ -119,7 +112,7 @@ public class HomeTabFragment extends Fragment {
     private void createQuery(){
         int l = itemsChecked.size();
 
-        String url = "";
+        String preurl = "";
         String website = "http://api.edamam.com/search?";
         String appKey = "&app_key=143092dfd2c7edb60d17f6ba0d27251b";
         String appId = "&app_id=56ecd714";
@@ -127,9 +120,10 @@ public class HomeTabFragment extends Fragment {
         for(int i = 0;i < l;i+=1){
             query += itemsChecked.get(i);
         }
-        url = website + query + appId + appKey;
-        Log.d("Home Tab Fragment","URL sent: "+ url);
-        String raw = sendRequest(url);
+        preurl = website + query + appId + appKey;
+        Log.d("Home Tab Fragment","URL sent: "+ preurl);
+        String raw = sendRequest(preurl);
+        Log.d("Home Tab Fragment", "raw: "+raw+" rawData: "+rawData);
         try{
             reader = new JSONObject(raw);
             Log.d("Home Tab Fragment","URL Recieved: "+

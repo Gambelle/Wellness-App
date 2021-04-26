@@ -38,8 +38,8 @@ public class SlideshowFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
                 new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
+        View root = inflater.inflate(R.layout.fragment_slideshow2, container, false);
+        final TextView textView = root.findViewById(R.id.textView7);
         Context context = getActivity();
         SharedPreferences sharedPref = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         waterNum=sharedPref.getInt("water_pref", 0);
