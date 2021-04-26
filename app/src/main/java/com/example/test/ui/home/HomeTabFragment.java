@@ -56,7 +56,7 @@ public class HomeTabFragment extends Fragment {
         allItems = new ArrayList<String>(sp.getStringSet("FRIDGE_ITEM_NAMES",defaultString));
         allItems.addAll(sp.getStringSet("PANTRY_ITEM_NAMES",defaultString));
 
-        RecyclerAdapter recyclerA = new RecyclerAdapter(getActivity(),allItems);
+        RecyclerAdapter2 recyclerA = new RecyclerAdapter2(getActivity(),allItems);
         items.setAdapter(recyclerA);
         items.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -68,6 +68,7 @@ public class HomeTabFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 overLaySelectItems.setVisibility(View.VISIBLE);
+                searchButton.setVisibility(View.INVISIBLE);
             }
         });
 

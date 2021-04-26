@@ -128,7 +128,7 @@ public class GalleryFragment extends Fragment {
         btnmT.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Fragment someFragment = new MealTracker();
+                Fragment someFragment = new mealTracker();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 root.findViewById(R.id.set).setVisibility(View.INVISIBLE);
                 root.findViewById(R.id.cal).setVisibility(View.INVISIBLE);

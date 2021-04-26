@@ -23,7 +23,7 @@ import com.example.test.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class MealTracker extends Fragment {
+public class mealTracker extends Fragment {
     private MealTrackerViewModel mealTrackerViewModel;
     String breakfast, lunch, dinner;
 
