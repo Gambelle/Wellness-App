@@ -46,13 +46,23 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="109dp">
+
+            <Button
+                android:id="@+id/sendQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send Query"
+                app:layout_constraintBottom_toTopOf="@+id/currentItems"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/currentItems"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

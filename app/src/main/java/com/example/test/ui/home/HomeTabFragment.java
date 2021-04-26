@@ -23,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.test.R;
 import com.example.test.ui.slideshow.SlideshowViewModel;
 
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -43,6 +45,7 @@ public class HomeTabFragment extends Fragment {
     URL url;
     String rawData;
     HttpURLConnection urlConnection;
+    JSONObject reader;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -101,17 +104,40 @@ public class HomeTabFragment extends Fragment {
 
             }
         });
+
+
+        Button sendQ = (Button) root.findViewById(R.id.sendQ);
+        sendQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createQuery();
+            }
+        });
         return root;
     }
 
     private void createQuery(){
+        int l = itemsChecked.size();
+
         String url = "";
         String website = "http://api.edamam.com/search?";
         String appKey = "&app_key=143092dfd2c7edb60d17f6ba0d27251b";
         String appId = "&app_id=56ecd714";
-        String query = "q=chicken";
+        String query = "q=";
+        for(int i = 0;i < l;i+=1){
+            query += itemsChecked.get(i);
+        }
         url = website + query + appId + appKey;
+        Log.d("Home Tab Fragment","URL sent: "+ url);
         String raw = sendRequest(url);
+        try{
+            reader = new JSONObject(raw);
+            Log.d("Home Tab Fragment","URL Recieved: "+
+                    reader.getJSONObject("hits").getJSONObject("0").getJSONObject("recipe").get("url"));
+        }
+        catch (org.json.JSONException e){
+            Log.d("Home Tab Fragment","Invalid JSON");
+        }
     }
 
     private String sendRequest(String r){
