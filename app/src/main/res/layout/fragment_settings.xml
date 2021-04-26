@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.Settings">
+    <TextView
+        android:layout_width="390dp"
+        android:id="@+id/text4"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
+        android:text="Set your goal number of calories you want to eat per day! (1000-10000 cals)" />
+    <EditText
+        android:id="@+id/EditSCals"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:textSize="30sp"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/Sbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="140dp"
+        android:text="Set"/>
+    <TextView
+        android:id="@+id/SCals"
+        android:layout_width="250dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Goal: "
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="390dp"
+        android:id="@+id/text5"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="270dp"
+        android:text="Change recommended macronutrients:\n (Recommended setting are based off of The Dietary Guidelines for Americans)" />
+    <EditText
+        android:id="@+id/EditSCarbss"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="360dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/Sbtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="360dp"
+        android:text="Set"/>
+    <TextView
+        android:id="@+id/SCarbs"
+        android:layout_width="250dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Goal: "
+        android:textSize="20sp"/>
+    <TextView
+
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="380dp"
+        android:textSize="25sp"
+        android:text="Carbs" />
+
+    <EditText
+        android:id="@+id/EditSProtiens"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="480dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/Sbtn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="480dp"
+        android:text="Set"/>
+    <TextView
+        android:id="@+id/SProtiens"
+        android:layout_width="250dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Goal: "
+        android:textSize="20sp"/>
+    <TextView
+
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="500dp"
+        android:textSize="25sp"
+        android:text="Protiens" />
+
+    <EditText
+        android:id="@+id/EditSFats"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="600dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/Sbtn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="600dp"
+        android:text="Set"/>
+    <TextView
+        android:id="@+id/SFats"
+        android:layout_width="250dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="660dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Goal: "
+        android:textSize="20sp"/>
+    <TextView
+
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="620dp"
+        android:textSize="25sp"
+        android:text="Fats" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        android:textSize="40sp"
+        android:text="Settings" />
+
+
+</FrameLayout>
