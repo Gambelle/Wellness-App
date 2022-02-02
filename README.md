@@ -4,7 +4,7 @@
 
 Ever wanted an app that can keep track or of your grocieries, suggest healthy meals, 
 and monitor your dietary goals! Fitfull is built as a catch-all that encourages healthy 
-decision making whe it come to our diet.
+decision making when it come to our diet.
 ## GOAL TRACKING
 A goal management feature
 that will allow you to create
